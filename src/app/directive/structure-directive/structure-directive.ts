@@ -18,17 +18,28 @@ export class StructureDirective {
   currentState:string='';
   cityArray:string[]=['Kolkata','Goa', 'Mumbai'];
   studentList:any[]=[
-    {id:1, name:"sumita", city: "pune", status:true},
-    {id:2, name:"roni", city: "kolkata", status:false},
-    {id:3, name:"namita", city: "chennai", status:true}
+    {id:1, name:"sumita", city: "pune", status:true, totalMarks:90},
+    {id:2, name:"roni", city: "kolkata", status:false, totalMarks:50},
+    {id:3, name:"namita", city: "chennai", status:true, totalMarks:20}
   ]
+  isDiv1bgColor:string='';
   show() {
     this.isDiv1Visible = true;
+    
   }
   hide() {
     this.isDiv1Visible = false;
+    
   }
   toggleDiv2(){
     this.isDiv2Visible = !this.isDiv2Visible;
+  }
+  showColor() {
+    //this.isDiv1Visible = true;
+    this.isDiv1bgColor='bg-danger';
+  }
+  hideColor() {
+    // this.isDiv1Visible = false;
+    this.isDiv1bgColor='bg-primary';
   }
 }

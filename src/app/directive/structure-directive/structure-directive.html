@@ -46,6 +46,7 @@
             <th>Name</th>
             <th>city</th>
             <th>status</th>
+            <th>progress</th>
         </thead>
         <tbody>
             <tr *ngFor="let stud of studentList">
@@ -53,7 +54,20 @@
                 <td>{{stud.name}}</td>
                 <td>{{stud.city}}</td>
                 <td>{{stud.status?"Active":"De-active"}}</td>
+                <td>
+                    <div class="progress">
+                        <div class="progress-bar"
+                        [ngStyle]="{'width': stud.totalMarks+'%'}">{{stud.totalMarks}}</div>
+                    </div>
+                </td>
             </tr>
         </tbody>
        </table>
+
+<div [ngClass]="isDiv1bgColor">Div</div>
+<div>
+    <button (click)="showColor()">show</button>
+    <button (click)="hideColor()">hide</button>
+</div>
+
 
