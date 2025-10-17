@@ -1,0 +1,59 @@
+<div *ngIf="isDiv1Visible">Div</div>
+<div>
+    <button (click)="show()">show</button>
+    <button (click)="hide()">hide</button>
+</div>
+
+<!-- toggle -->
+ <div *ngIf="isDiv2Visible">Div2</div>
+ <div>
+    <button (click)="toggleDiv2()">Toggle</button>
+ </div>
+  <!-- using comparison -->
+   <div *ngIf="num1==num2">Div3</div>
+   <div>
+    <input type="text" placeholder="num1" [(ngModel)]="num1"/>
+    <input type="text" placeholder="num2" [(ngModel)]="num2"/>
+   </div>
+
+   <!-- chcekbox -->
+    <div *ngIf="isChecked">Div4</div>
+    <input type="checkbox" [(ngModel)]="isChecked"/>
+    <!-- dropdown -->
+     <div *ngIf="currentState !=='USA'">Div5</div>
+     <select [(ngModel)]="currentState">
+        <option>USA</option>
+        <option>India</option>
+        <option>Bhutan</option>
+     </select>
+
+     <!-- using loop -->
+      <div>
+        <ul>
+            <li *ngFor="let city of cityArray">{{city}}</li>
+        </ul>
+      </div>
+      <select>
+        <option *ngFor="let city of cityArray" [value]="city">{{city}}</option>
+      </select>
+      <!-- iterate over the loop -->
+       <select>
+        <option *ngFor="let stud of studentList" [value]="stud.name">{{stud.name}}</option>
+       </select>
+       <table>
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>city</th>
+            <th>status</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let stud of studentList">
+                <td>{{stud.id}}</td>
+                <td>{{stud.name}}</td>
+                <td>{{stud.city}}</td>
+                <td>{{stud.status?"Active":"De-active"}}</td>
+            </tr>
+        </tbody>
+       </table>
+

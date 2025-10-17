@@ -1,0 +1,40 @@
+<p>data-binding works!</p>
+<table>
+    <tr>
+        <span>interpolation</span>
+        <td>courseName : {{courseName}}</td>
+    </tr>
+    <tr>
+        <td>{{inputType}}</td>
+    </tr>
+</table>
+<div>
+    <p>Property Binding</p>
+    <input type ="text" [value]="courseName"/>
+</div>
+
+<div>
+    <p>event Binding</p>
+    <button (click)="ChnageCourseName()">ChnageCourseName</button>
+</div>
+<div>
+    <input [type]="inputType"/>
+</div>
+<div>
+    <span>2Way bingding</span>
+    <input type="text" [(ngModel)]="courseName"/>
+</div>
+<div>
+    <select [(ngModel)]="courseName">
+        <option value="">select</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="UP">UP</option>
+    </select>
+</div>
+
+<div>
+    <p>Signal</p>
+    <p>{{firstName()}}</p>
+</div>
+
+
