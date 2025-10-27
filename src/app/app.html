@@ -1,8 +1,20 @@
 <h1>hello</h1>
-<table>
-  <tr>
-    <td>
-      <app-structure-directive></app-structure-directive>
-    </td>
-  </tr>
-</table>
+<button class="btn btn-primary" [routerLink]="['/add-emp']">Go to Add Emp</button>
+<button class="btn btn-primary" (click)="navigateToURL()">Go to Employees</button>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">AngularApp</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a routerLink="add-emp">add-emp</a></li>
+      <li><a routerLink="emp-list">emp-list</a></li>
+      <li><a routerLink="data-binding">data-binding</a></li>
+      <li><a routerLink="structure-Directive">structure-Directive</a></li>
+    </ul>
+  </div>
+</nav>
+<div>
+  <router-outlet></router-outlet>
+</div>
