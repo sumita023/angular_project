@@ -1,0 +1,96 @@
+<div>
+  @if(isDiv1Visible==true){
+  <div>Div1</div>
+  }
+
+  <div>
+    <button (click)="show()">show</button>
+    <button (click)="hide()">hide</button>
+  </div>
+</div>
+<div>
+  @if(isDiv2Visible == true){
+  <div class="bg-success">Div1</div>
+  } @else{
+  <div class="bg-warning">Div1</div>
+  }
+
+  <div>
+    <button (click)="toggleDiv()">toggle</button>
+  </div>
+</div>
+<!-- u-3 -->
+<div>
+  @if(num1 == num2){
+  <div class="bg-success">Div3</div>
+  }
+
+  <div>
+    <input type="text" [(ngModel)]="num1" />
+    <input type="text" [(ngModel)]="num2" />
+  </div>
+</div>
+<!-- u-4 -->
+<div>
+  <select [(ngModel)]="selectedVal">
+    @for(arr of selectionArray; track $index){
+    <option>{{ arr }}</option>
+    }
+  </select>
+  <div>{{ selectedVal }}</div>
+</div>
+
+<!-- u-5-->
+<div>
+<table>
+    <thead>
+        <th>Sr No</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Status</th>
+    </thead>
+    <tbody>
+        @for(stud of studentArray; track $index){
+            <tr>
+            <td>{{$index+1}}</td>
+            <td>{{stud.name}}</td>
+            <td>{{stud.city}}</td>
+            <td>{{stud.status}}</td>
+        </tr>
+        }
+    </tbody>
+</table>
+</div>
+<!-- switch case -->
+ <div>
+    <input type="text" [(ngModel)]="dayNumber"/>
+ </div>
+ <div>Day Number is:
+    @switch(dayNumber){
+        @case('1'){
+            <span>Monday</span>
+        }
+        @case('2'){
+            <span>Tuesday</span>
+        }
+        @case('3'){
+            <span>Wednesday</span>
+        }
+        @case('4'){
+            <span>Thursday</span>
+        }
+        @case('5'){
+            <span>Friday</span>
+        }
+        @case('6'){
+            <span>Saturday</span>
+        }
+        @case('7'){
+            <span>Sunday</span>
+        }
+        @default{
+            <span>Wrong entry</span>
+        }
+
+    }
+ </div>
